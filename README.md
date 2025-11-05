@@ -10,13 +10,13 @@ It can also be installed as a desktop Progressive Web App (PWA) for quick access
 
 # ✨ Key Features
 
-✅ Dynamic Invoice Generation – Enter client and project details to generate invoices automatically.
-✅ Auto Calculations – Calculates landscape and build-up areas, site visits, and total amount.
-✅ Responsive Design – Works smoothly across desktop, tablet, and mobile devices.
-✅ LocalStorage Integration – Saves invoice data temporarily for print or preview.
-✅ Download & Print Ready – Generate and print professional invoices directly from the browser.
-✅ Signature Section – Includes signature areas for both client and architect.
-✅ Installable as Desktop App – PWA enabled for easy desktop or mobile installation.
+- Dynamic Invoice Generation – Enter client and project details to generate invoices automatically.
+- Auto Calculations – Calculates landscape and build-up areas, site visits, and total amount.
+- Responsive Design – Works smoothly across desktop, tablet, and mobile devices.
+- LocalStorage Integration – Saves invoice data temporarily for print or preview.
+- Download & Print Ready – Generate and print professional invoices directly from the browser.
+- Signature Section – Includes signature areas for both client and architect.
+- Installable as Desktop App – PWA enabled for easy desktop or mobile installation.
 
 # 🧠 Technologies Used
 
