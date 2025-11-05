@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- <table>
+    <thead>
+      <tr>
+        <th>Rates in Percentage</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>3 Sets</td>
+        <td>1%</td>
+      </tr>
+      <tr>
+        <td>6 Sets</td>
+        <td>2%</td>
+      </tr>
+      <tr>
+        <td>10 Sets</td>
+        <td>3%</td>
+      </tr>
+      <tr>
+        <td>Landscape</td>
+        <td>0 Rs</td>
+      </tr>
+      <tr>
+        <td>Additional Details</td>
+        <td>1 Rs</td>
+      </tr>
+    </tbody>
+  </table> -->
+
+  <div class="invoice-container">
+    <header>
+
+      <div class="name">
+        <!-- <h1>Invoice</h1> -->
+        <!-- <img src="Logo.png" alt="logo"> -->
+        <table border="1" id="invoice-head">
+          <thead>
+            <tr>
+              <th rowspan="4">Invoice</th>
+            </tr>
+            <tr>
+              <!-- <th rowspan="3" >Invoice</th> -->
+              <th colspan="2">
+                <img src="./Images/Logo.png" alt="Arkaya Architects Logo" width="200">
+              </th>
+            <tr>
+              <td>Ar.Shreeyash Dhawle</td>
+              <td>Ar.Pratik Borate</td>
+            </tr>
+            <tr>
+              <td>82080424405</td>
+              <td>7026894564</td>
+            </tr>
+            </tr>
+          </thead>
+        </table>
+      </div>
+
+    </header>
+    <div id="invoice-details">
+      <!-- Invoice details will be dynamically generated -->
+    </div>
+    <button id="print-invoice">Print Invoice</button>
+  </div>
+  <script>
+
+    // Retrieve invoice number from localStorage or initialize it
+    let invoiceNumber = localStorage.getItem("invoiceNumber");
+    if (!invoiceNumber) {
+      invoiceNumber = "1000"; // Start from 1000
+    } else {
+      invoiceNumber = (parseInt(invoiceNumber) + 1).toString(); // Increment by 1
+    }
+
+    // Save the updated invoice number back to localStorage
+    localStorage.setItem("invoiceNumber", invoiceNumber);
+
+
+    const invoiceData = JSON.parse(localStorage.getItem("invoiceData"));
+    if (invoiceData) {
+      const currentDate = new Date().toLocaleDateString();
+      const landscapeCharges = invoiceData.landscapeArea * invoiceData.landscapeRate;
+      const buildUpCharges = invoiceData.buildUpArea * invoiceData.buildUpRate;
+      const siteVisitCharges = invoiceData.siteVisits * invoiceData.siteVisitRate;
+      const total = landscapeCharges + buildUpCharges + siteVisitCharges;
+
+      const invoiceHTML = `
+    <header>
+      <div style="text-align: right; font-size: 0.9rem; color: #555;" class ="dateInvoiceNo">
+        <p><strong>Date:</strong> ${currentDate}</p>
+        <p><strong>Invoice Number:</strong> ${invoiceNumber}</p>
+      </div>
+       
+      <hr>
+    </header>
+        <h3>Client Details :</h3>
+        <div class ="client-details">
+        <p><strong>Name :</strong> ${invoiceData.clientName}</p>
+        <p><strong>Address :</strong> ${invoiceData.address}</p>
+        <p><strong>Contact No :</strong> ${invoiceData.contactNumber}</p>
+        <p><strong>Project Type:</strong> ${invoiceData.projectType}</p>
+        </div>
+        
+        <hr>
+        <h3>Project Details</h3>
+        
+        <br>
+        <table>
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Quantity</th>
+              <th>Rate</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody style="text-align: center; vertical-align: middle;">
+            <tr >
+              <td>Landscape Area</td>
+              <td>${invoiceData.landscapeArea} sq ft</td>
+              <td>${invoiceData.landscapeRate}%</td>
+              <td>${landscapeCharges.toFixed(2)}</td>
+            </tr>
+            <tr>
+              <td>Build-Up Area</td>
+              <td>${invoiceData.buildUpArea} sq ft</td>
+              <td>${invoiceData.buildUpRate}%</td>
+              <td>${buildUpCharges.toFixed(2)}</td>
+            </tr>
+            <tr>
+              <td>Site Visits</td>
+              <td>${invoiceData.siteVisits}</td>
+              <td>${invoiceData.siteVisitRate}</td>
+              <td>${siteVisitCharges.toFixed(2)}</td>
+            </tr>
+          </tbody>
+        </table>
+        <h3 id = "total-Amount">Total: ₹${total.toFixed(2)}</h3>
+      `;
+      document.getElementById("invoice-details").innerHTML = invoiceHTML;
+    }
+
+    document.getElementById("print-invoice").addEventListener("click", function () {
+      window.print();
+    });
+  </script>
+</body>
+
+</html>
