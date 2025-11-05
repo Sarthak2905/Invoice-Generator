@@ -9,50 +9,19 @@
 </head>
 
 <body>
-  <!-- <table>
-    <thead>
-      <tr>
-        <th>Rates in Percentage</th>
-        <th>Amount</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>3 Sets</td>
-        <td>1%</td>
-      </tr>
-      <tr>
-        <td>6 Sets</td>
-        <td>2%</td>
-      </tr>
-      <tr>
-        <td>10 Sets</td>
-        <td>3%</td>
-      </tr>
-      <tr>
-        <td>Landscape</td>
-        <td>0 Rs</td>
-      </tr>
-      <tr>
-        <td>Additional Details</td>
-        <td>1 Rs</td>
-      </tr>
-    </tbody>
-  </table> -->
 
   <div class="invoice-container">
     <header>
 
       <div class="name">
-        <!-- <h1>Invoice</h1> -->
-        <!-- <img src="Logo.png" alt="logo"> -->
+       
         <table border="1" id="invoice-head">
           <thead>
             <tr>
               <th rowspan="4">Invoice</th>
             </tr>
             <tr>
-              <!-- <th rowspan="3" >Invoice</th> -->
+        
               <th colspan="2">
                 <img src="./Images/Logo.png" alt="Arkaya Architects Logo" width="200">
               </th>
@@ -75,7 +44,7 @@
     </div>
     <button id="print-invoice">Print Invoice</button>
   </div>
-  <script>
+   <script>
 
     // Retrieve invoice number from localStorage or initialize it
     let invoiceNumber = localStorage.getItem("invoiceNumber");
@@ -156,7 +125,7 @@
     document.getElementById("print-invoice").addEventListener("click", function () {
       window.print();
     });
-  </script>
+  </script> 
 </body>
 
 </html>
