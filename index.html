@@ -70,7 +70,7 @@
         </form>
     </div>
 
-    <script>
+     <script>
         document.getElementById("generate-invoice").addEventListener("click", function () {
             const invoiceData = {
                 clientName: document.getElementById("client-name").value,
@@ -87,7 +87,7 @@
             localStorage.setItem("invoiceData", JSON.stringify(invoiceData));
             window.location.href = "invoice.html";
         });
-    </script>
+    </script> 
 </body>
 
 </html>
