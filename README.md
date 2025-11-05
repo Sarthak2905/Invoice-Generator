@@ -20,39 +20,39 @@ It can also be installed as a desktop Progressive Web App (PWA) for quick access
 
 # 🧠 Technologies Used
 
-HTML5 – Structure and form layout
+- HTML5 – Structure and form layout
 
-CSS3 – Styling and responsive design
+- CSS3 – Styling and responsive design
 
-JavaScript (Vanilla JS) – Logic, calculations, and data handling
+- JavaScript (Vanilla JS) – Logic, calculations, and data handling
 
-Manifest & Service Worker – PWA support for desktop installation
+- Manifest & Service Worker – PWA support for desktop installation
 
 # 🖥️ Pages
 
-index.html – Input form for client and project details
+- index.html – Input form for client and project details
 
-invoice.html – Generated invoice preview and print page
+- invoice.html – Generated invoice preview and print page
 
-styles.css – Unified styling for both pages
+- styles.css – Unified styling for both pages
 
-script.js – Handles data transfer and dynamic calculations
+- script.js – Handles data transfer and dynamic calculations
 
-manifest.json & service-worker.js – PWA setup
+- manifest.json & service-worker.js – PWA setup
 
 # 🚀 How to Use
 
-Open index.html in your browser.
+- Open index.html in your browser.
 
-Fill in all required project and client details.
+- Fill in all required project and client details.
 
-Click “Generate Invoice” to create the invoice.
+- Click “Generate Invoice” to create the invoice.
 
-Review details on the invoice page.
+- Review details on the invoice page.
 
-Click “Download Invoice (PDF)” or Print to save or print.
+- Click “Download Invoice (PDF)” or Print to save or print.
 
-Optionally, install it as a desktop app using the browser install prompt.
+- Optionally, install it as a desktop app using the browser install prompt.
 
 # 🏢 About Arkayaa Architects
 
